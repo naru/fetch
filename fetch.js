@@ -206,6 +206,10 @@
 
     this._initBody = function(body) {
       this._bodyInit = body
+      
+      if (FormData.prototype.isPrototypeOf(body)) 
+        support.formData = true
+      
       if (!body) {
         this._bodyText = ''
       } else if (typeof body === 'string') {
